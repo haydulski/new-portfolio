@@ -2,16 +2,16 @@
   "files": {
     "main.js": "/new-portfolio/static/js/main.cf024e6f.chunk.js",
     "main.js.map": "/new-portfolio/static/js/main.cf024e6f.chunk.js.map",
-    "runtime-main.js": "/new-portfolio/static/js/runtime-main.dac31c7e.js",
-    "runtime-main.js.map": "/new-portfolio/static/js/runtime-main.dac31c7e.js.map",
+    "runtime-main.js": "/new-portfolio/static/js/runtime-main.214be9a5.js",
+    "runtime-main.js.map": "/new-portfolio/static/js/runtime-main.214be9a5.js.map",
     "static/js/2.c68e36e5.chunk.js": "/new-portfolio/static/js/2.c68e36e5.chunk.js",
     "static/js/2.c68e36e5.chunk.js.map": "/new-portfolio/static/js/2.c68e36e5.chunk.js.map",
     "static/js/3.5989a374.chunk.js": "/new-portfolio/static/js/3.5989a374.chunk.js",
     "static/js/3.5989a374.chunk.js.map": "/new-portfolio/static/js/3.5989a374.chunk.js.map",
     "static/js/4.4fb77f68.chunk.js": "/new-portfolio/static/js/4.4fb77f68.chunk.js",
     "static/js/4.4fb77f68.chunk.js.map": "/new-portfolio/static/js/4.4fb77f68.chunk.js.map",
-    "static/js/5.17f297bc.chunk.js": "/new-portfolio/static/js/5.17f297bc.chunk.js",
-    "static/js/5.17f297bc.chunk.js.map": "/new-portfolio/static/js/5.17f297bc.chunk.js.map",
+    "static/js/5.ffdc8fde.chunk.js": "/new-portfolio/static/js/5.ffdc8fde.chunk.js",
+    "static/js/5.ffdc8fde.chunk.js.map": "/new-portfolio/static/js/5.ffdc8fde.chunk.js.map",
     "static/js/6.ff22885b.chunk.js": "/new-portfolio/static/js/6.ff22885b.chunk.js",
     "static/js/6.ff22885b.chunk.js.map": "/new-portfolio/static/js/6.ff22885b.chunk.js.map",
     "static/css/7.4c18b44f.chunk.css": "/new-portfolio/static/css/7.4c18b44f.chunk.css",
@@ -45,7 +45,7 @@
     "static/media/wordpress-logo.c6b50411.png": "/new-portfolio/static/media/wordpress-logo.c6b50411.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.dac31c7e.js",
+    "static/js/runtime-main.214be9a5.js",
     "static/js/2.c68e36e5.chunk.js",
     "static/js/main.cf024e6f.chunk.js"
   ]
