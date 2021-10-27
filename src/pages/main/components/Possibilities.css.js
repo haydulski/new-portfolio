@@ -34,6 +34,9 @@ z-index:5;
 @media(max-width: ${({ theme }) => theme.size.lg}px){
     font-size:1rem;
 }
+@media(max-width: ${({ theme }) => theme.size.md}px){
+    font-size:.8rem;
+}
 `
 export const Line = styled.div`
 background-color: ${({ theme }) => theme.colors.shadow};

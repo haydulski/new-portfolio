@@ -30,7 +30,8 @@ padding-top: calc(50vh - 100px);
     font-size:6rem;
 }
 @media(max-width: ${({ theme }) => theme.size.lg}px){
-    font-size:3rem;
+    font-size:2rem;
+    padding-top: calc(50vh - 50px);
 }
 `
 export const Slogan = styled.h2`
