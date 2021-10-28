@@ -9,6 +9,7 @@ import Logo from './components/Logo'
 import LoadingIndicator from './components/LoadingIndicator'
 import { setDarkModeFromStorage as darkModeSet } from './redux/actions/darkMode'
 import { setLanguage } from './redux/actions/langSwitch'
+
 const Portfolio = React.lazy(() => import('./pages/portfolio/Portfolio'))
 const Main = React.lazy(() => import('./pages/main/Main'))
 const Contact = React.lazy(() => import('./pages/contact/Contact'))
@@ -29,11 +30,7 @@ function App({ darkMode, darkModeSet, setLanguage }) {
     if (storageLang) {
       setLanguage()
     }
-
   }, [darkMode, darkModeSet, setLanguage])
-
-
-
 
   return (
     <Router>
@@ -41,7 +38,6 @@ function App({ darkMode, darkModeSet, setLanguage }) {
         {themeSwitch === false ? <LightTheme /> : <DarkTheme />}
         <Logo />
         <NavigationMenu />
-
         <Suspense fallback={<LoadingIndicator />}>
           <Switch>
             <Route path="/portfolio">

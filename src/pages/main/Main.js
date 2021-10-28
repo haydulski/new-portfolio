@@ -15,14 +15,11 @@ function Main() {
                 </Title>
                 <div style={{ textAlign: "center" }}>
                     <Translator pl={<Slogan>Projektowanie i budowa <span>stron</span> internetowych</Slogan>}
-
                         eng={<Slogan>Designing and developing of<span> websites</span></Slogan>} />
-
                 </div>
                 <div className='more-btn' style={{ textAlign: "center" }}>
                     <Translator pl={<MoreBtn href='#services'>Więcej  <ArrowForwardIcon /></MoreBtn>}
                         eng={<MoreBtn href='#services'>More  <ArrowForwardIcon /></MoreBtn>} />
-
                 </div>
             </header>
             <Services />
