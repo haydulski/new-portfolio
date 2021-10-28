@@ -10,6 +10,7 @@ export const schemaLight = {
     colors: {
         main: '#7e2625',
         second: '#f24405',
+        technologyBorder: '#f24405',
         light: '#f29863',
         button: '#e97b5c',
         shadow: '#e9dad1',
@@ -37,6 +38,7 @@ export const schemaDark = {
         shadow: 'lightgray',
         body: '#000',
         footer: '#000',
+        technologyBorder: 'rgba(255,255,255,0.3)',
     },
     lato: '"Lato", sans-serif',
     jost: '"Jost", sans-serif',

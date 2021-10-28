@@ -49,7 +49,7 @@ right:33.22%;
 z-index:1;
 `
 export const Circle = styled.div`
-background-color: white;
+background-color: ${({ theme }) => theme.dark ? '#ffffff2b' : 'white'};
 height:calc(100vh * ${({ size }) => size});
 width:calc(100vh * ${({ size }) => size});
 position: absolute;

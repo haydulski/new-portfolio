@@ -49,7 +49,9 @@ span{
     font-family:inherit;
     font-weight:inherit;
 }
-
+a{
+    text-decoration:none;
+}
 `
 export const DarkTheme = createGlobalStyle`
 ${normalize}
@@ -97,4 +99,8 @@ span{
     font-size:inherit;
     font-family:inherit;
     font-weight:inherit;
-}`
+}
+a{
+    text-decoration:none;
+}
+`

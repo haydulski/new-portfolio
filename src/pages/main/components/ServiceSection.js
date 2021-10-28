@@ -7,7 +7,7 @@ import Translator from '../../../components/Translator'
 function Services() {
     return (
         <Container id='services'>
-            <h3 className='small-title'>Usługi</h3>
+            <Translator pl={<h3 className='small-title'>Usługi</h3>} eng={<h3 className='small-title'>Services</h3>} />
             <Column>
 
                 <Service>

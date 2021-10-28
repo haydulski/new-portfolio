@@ -36,7 +36,7 @@ function App({ darkMode, darkModeSet, setLanguage }) {
 
 
   return (
-    <Router basename='/new-portfolio'>
+    <Router>
       <ThemeProvider theme={themeSwitch ? schemaDark : schemaLight}>
         {themeSwitch === false ? <LightTheme /> : <DarkTheme />}
         <Logo />
@@ -54,7 +54,7 @@ function App({ darkMode, darkModeSet, setLanguage }) {
               <Main />
             </Route>
           </Switch>
-          <Footer />
+          <Footer isDark={themeSwitch} />
         </Suspense>
       </ThemeProvider>
     </Router>

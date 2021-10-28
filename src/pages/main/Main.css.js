@@ -32,6 +32,7 @@ padding-top: calc(50vh - 100px);
 @media(max-width: ${({ theme }) => theme.size.lg}px){
     font-size:2rem;
     padding-top: calc(50vh - 50px);
+    text-shadow: 0px 3px 0px ${({ theme }) => theme.colors.shadow};
 }
 `
 export const Slogan = styled.h2`
@@ -63,6 +64,9 @@ font-weight: 400 !important;
 padding:4px 20px !important;
 border-radius:0 !important;
 font-size:1.2rem !important;
+@media(max-width: ${({ theme }) => theme.size.lg}px){
+    font-size:.9rem !important;
+}
 `
 export const Line1 = styled.div`
 width:4px;
