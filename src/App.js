@@ -4,9 +4,9 @@ import { LightTheme, DarkTheme } from './styles/globalCss'
 import { schemaLight, schemaDark } from './styles/schema'
 import { connect } from 'react-redux'
 import NavigationMenu from './components/NavigationMenu'
+import LoadingIndicator from './components/LoadingIndicator'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Logo from './components/Logo'
-import LoadingIndicator from './components/LoadingIndicator'
 import { setDarkModeFromStorage as darkModeSet } from './redux/actions/darkMode'
 import { setLanguage } from './redux/actions/langSwitch'
 
@@ -20,6 +20,7 @@ const storage = localStorage.getItem('darkmode')
 const storageLang = localStorage.getItem('lang')
 
 function App({ darkMode, darkModeSet, setLanguage }) {
+
   const [themeSwitch, setThemeSwitch] = useState(false)
 
   useEffect(() => {
@@ -49,9 +50,12 @@ function App({ darkMode, darkModeSet, setLanguage }) {
             <Route path="/">
               <Main />
             </Route>
+            <Route>
+              <Main />
+            </Route>
           </Switch>
-          <Footer isDark={themeSwitch} />
         </Suspense>
+        <Footer isDark={themeSwitch} />
       </ThemeProvider>
     </Router>
   );

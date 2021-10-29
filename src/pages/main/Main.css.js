@@ -4,7 +4,7 @@ import Button from '@mui/material/Button/Button'
 
 export const Container = styled.div`
 min-height:100vh;
-background-color:black;
+background-color:${({ theme }) => theme.colors.body};
 background-image:url(${({ theme }) => theme.dark ? '' : img});
 background-position: center;
 background-size: cover;
