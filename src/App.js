@@ -35,7 +35,7 @@ function App({ darkMode, darkModeSet, setLanguage }) {
 
   return (
     <Router>
-      <ThemeProvider theme={themeSwitch ? schemaDark : schemaLight}>
+      <ThemeProvider theme={themeSwitch ? schemaDark : schemaLight} disableVendorPrefixes={process.env.NODE_ENV === 'production'}>
         {themeSwitch === false ? <LightTheme /> : <DarkTheme />}
         <Logo />
         <NavigationMenu />

@@ -7,7 +7,7 @@ import Translator from '../../../components/Translator'
 function ContactForm({ mode }) {
     const [state, handleSubmit] = useForm("xpzywvla");
     if (state.succeeded) {
-        return <Translator pl={<p>Twoja wiadomość została wysłana i wkrótce na ją odpowiem !</p>}
+        return <Translator pl={<p>Twoja wiadomość została wysłana i wkrótce na nią odpowiem !</p>}
             eng={<p>Your message has been send and we answer soon !</p>} />;
     }
     const colorForDark = mode ? '#2b2b2b' : '#f29863'

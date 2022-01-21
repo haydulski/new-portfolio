@@ -77,7 +77,7 @@ function Portfolio() {
 
                 <ScrollSection>
                     <Parallax className="custom-class" y={[50, -50]} tagOuter="figure">
-                        <HdSite href="https://koparkasuwalki.pl" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut} data-target='hdworx' target="_blank" rel="nofollow" />
+                        <HdSite href="https://koparkasuwalki.pl" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut} data-target='hdworx' target="_blank" rel="dofollow" />
                         <CircleText id="hdworx" arc={360} radius={210} >*Hdworx usługi minikoparką</CircleText>
                     </Parallax>
                     <Parallax className="custom-class" y={[25, -25]} tagOuter="figure">

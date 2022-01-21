@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom'
 import CloseIcon from '@mui/icons-material/Close';
 import Translator from './Translator'
 
-const Container = styled.div`
+const Container = styled.nav`
 position:fixed;
 left:0;
 width:0vw;
@@ -80,9 +80,6 @@ function NavigationMenu({ switchToDark, isDark }) {
 
     const { pathname } = useLocation()
 
-    const handleDark = () => {
-        switchToDark()
-    }
     const [pos, setPos] = useState('close')
     const handlePosition = () => {
         pos === 'close' ? setPos('open') : setPos('close')
@@ -106,7 +103,7 @@ function NavigationMenu({ switchToDark, isDark }) {
                     <li><Link to="/"><Translator pl={'Główna'} eng={'Home'} /></Link></li>
                     <li><Link to="/portfolio">Portfolio</Link></li>
                     <li><Link to="/contact"><Translator pl={'Kontakt'} eng={'Contact'} /></Link></li>
-                    <DarkSwitcher checked={isDark} onClick={handleDark} />
+                    <DarkSwitcher checked={isDark} onClick={() => switchToDark()} />
                 </List>
 
             </Container>
