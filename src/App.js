@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components'
 import { LightTheme, DarkTheme } from './styles/globalCss'
 import { schemaLight, schemaDark } from './styles/schema'
@@ -9,9 +9,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Logo from './components/Logo'
 import { setDarkModeFromStorage as darkModeSet } from './redux/actions/darkMode'
 import { setLanguage } from './redux/actions/langSwitch'
+import Main from './pages/main/Main'
 
 const Portfolio = React.lazy(() => import('./pages/portfolio/Portfolio'))
-const Main = React.lazy(() => import('./pages/main/Main'))
+// const Main = React.lazy(() => import('./pages/main/Main'))
 const Contact = React.lazy(() => import('./pages/contact/Contact'))
 const Footer = React.lazy(() => import('./components/Footer'))
 
@@ -22,6 +23,11 @@ const storageLang = localStorage.getItem('lang')
 function App({ darkMode, darkModeSet, setLanguage }) {
 
   const [themeSwitch, setThemeSwitch] = useState(false)
+  const [loaded, setLoaded] = useState(0)
+
+  useEffect(() => {
+    setLoaded(1)
+  }, [])
 
   useEffect(() => {
     setThemeSwitch(darkMode)
@@ -33,13 +39,15 @@ function App({ darkMode, darkModeSet, setLanguage }) {
     }
   }, [darkMode, darkModeSet, setLanguage])
 
-  return (
-    <Router>
-      <ThemeProvider theme={themeSwitch ? schemaDark : schemaLight} disableVendorPrefixes={process.env.NODE_ENV === 'production'}>
-        {themeSwitch === false ? <LightTheme /> : <DarkTheme />}
-        <Logo />
-        <NavigationMenu />
-        <Suspense fallback={<LoadingIndicator />}>
+  return loaded === 0 ?
+    <LoadingIndicator />
+    : (
+      <Router>
+        <ThemeProvider theme={themeSwitch ? schemaDark : schemaLight} disableVendorPrefixes={process.env.NODE_ENV === 'production'}>
+          {themeSwitch === false ? <LightTheme /> : <DarkTheme />}
+          <Logo />
+          <NavigationMenu />
+
           <Switch>
             <Route path="/portfolio">
               <Portfolio />
@@ -54,11 +62,11 @@ function App({ darkMode, darkModeSet, setLanguage }) {
               <Main />
             </Route>
           </Switch>
-        </Suspense>
-        <Footer isDark={themeSwitch} />
-      </ThemeProvider>
-    </Router>
-  );
+
+          <Footer isDark={themeSwitch} />
+        </ThemeProvider>
+      </Router>
+    );
 }
 
 export default connect(state => ({

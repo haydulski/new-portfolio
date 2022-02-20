@@ -4,18 +4,21 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import Translator from '../../../components/Translator'
-import { gsap, ScrollTrigger } from "gsap/all"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 function Services() {
 
     const services = useRef(null);
 
     useEffect(() => {
         const el = services.current
+        gsap.defaults({ ease: 'none', duration: .8 });
         gsap.registerPlugin(ScrollTrigger)
         const animation1 = gsap.timeline()
-        gsap.defaults({ ease: 'none', duration: .8 });
 
-        animation1.from(el.querySelector("#serv1"), {
+
+        animation1.from(el.querySelector("#serv4"), {
             y: 200,
             opacity: 0
         }).from(el.querySelector("#serv2"), { y: 200, opacity: 0 }).from(el.querySelector("#serv3"), { y: 200, opacity: 0 })
@@ -23,7 +26,8 @@ function Services() {
         ScrollTrigger.create({
             animation: animation1,
             trigger: el,
-            start: "top 50%"
+            start: "top 50%",
+            toggleActions: "play none none reverse"
         })
 
         return () => {
@@ -31,12 +35,13 @@ function Services() {
             ScrollTrigger.kill(true, true);
         };
     }, []);
-    return (
-        <Container ref={services}>
-            <Translator pl={<h3 className='small-title'>Usługi</h3>} eng={<h3 className='small-title'>Services</h3>} />
-            <Column>
 
-                <Service id='serv1'>
+    return (
+        <Container id="services" ref={services}>
+            <Translator pl={<h3 className='small-title'>Usługi</h3>} eng={<h3 className='small-title'>Services</h3>} />
+            <Column >
+
+                <Service id='serv4'>
                     <StorefrontIcon sx={{ fontSize: 100, color: 'white' }} />
                     <Translator pl={<h4>Sklepy e-commerce</h4>} eng={<h4>E-commerce shops</h4>} />
                 </Service >
