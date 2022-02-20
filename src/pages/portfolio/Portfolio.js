@@ -129,7 +129,7 @@ function Portfolio() {
                     <BeataSite3 />
                     <BeataSite2 />
                     <Parallax className="custom-class" y={[-10, 0]} tagOuter="figure">
-                        <BeataSite href="https://beatacedrzynska.art" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut} data-target='beata1' target="_blank" rel="nofollow" />
+                        <BeataSite href="https://beatacedrzynska.art/wystawy" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseOut} data-target='beata1' target="_blank" rel="nofollow" />
                         <CircleText id="beata1" arc={360} radius={210} >*Beata Cedrzyńska portfolio prac</CircleText>
                     </Parallax>
                 </ScrollSectionR>
