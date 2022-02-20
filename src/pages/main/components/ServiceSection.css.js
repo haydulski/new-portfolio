@@ -59,17 +59,19 @@ background-size:cover;
 background-position:center;
 box-shadow: 1px 5px 7px 1px lightgray;
 text-align:center;
+text-transform:uppercase;
+font-weight:500;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 @media(max-width: ${({ theme }) => theme.size.lg}px){
     width:40vw;
     height:40vw;
 }
 & svg{
     transition:.2s;
-    @media(max-width: ${({ theme }) => theme.size.lg}px){
-        margin-top:30% !important;
-    }
     @media(max-width: ${({ theme }) => theme.size.md}px){
-        margin-top:30% !important;
         width:48px;
         height:48px;
     }
@@ -78,7 +80,7 @@ text-align:center;
     transition:.2s;
     width:160px;
     height:160px;
-    margin-top:calc(40% - 60px);
+   
     @media(max-width: ${({ theme }) => theme.size.md}px){
         width:60px;
         height:60px;
