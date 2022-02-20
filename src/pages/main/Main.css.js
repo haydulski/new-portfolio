@@ -88,3 +88,12 @@ bottom:0;
 left:50%;
 transform:translateX(-50%);
 `
+export const PageProgress = styled.div`
+position:fixed;
+top:0;
+left:0;
+width:140%;
+height:8px;
+z-index:30;
+background-color:${({ theme }) => theme.colors.second};
+`

@@ -10,6 +10,7 @@ import Logo from './components/Logo'
 import { setDarkModeFromStorage as darkModeSet } from './redux/actions/darkMode'
 import { setLanguage } from './redux/actions/langSwitch'
 import Main from './pages/main/Main'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Portfolio = React.lazy(() => import('./pages/portfolio/Portfolio'))
 // const Main = React.lazy(() => import('./pages/main/Main'))
@@ -27,6 +28,9 @@ function App({ darkMode, darkModeSet, setLanguage }) {
 
   useEffect(() => {
     setLoaded(1)
+    return () => {
+      ScrollTrigger.kill()
+    }
   }, [])
 
   useEffect(() => {

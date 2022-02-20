@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import {
     Container, ScrollSection, ScrollSectionR,
     GokSite, GokSite2, GokSite3, ImmoSite, ImmoSite2, ImmoSite3,
@@ -6,11 +6,12 @@ import {
     MouiSite, MouiSite2, MouiSite3, ProrailSite, ProrailSite2, ProrailSite3,
     BeataSite, BeataSite2, BeataSite3, JumiSite, JumiSite2, JumiSite3,
     DomeSite, DomeSite2, DomeSite3,
-    Spacer, Line1
+    Spacer, Line1, PageProgress
 } from './Portfolio.css'
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 import CircleText from './components/CircleText'
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Portfolio() {
 
@@ -28,11 +29,42 @@ function Portfolio() {
             selectedText.classList.remove('spin')
         }
     }
+    const bar = useRef(null)
+
+    useEffect(() => {
+        const el = bar.current
+
+
+        gsap.registerPlugin(ScrollTrigger)
+        const progress2 = gsap.timeline()
+
+
+        progress2.from(el, {
+            scaleX: 0,
+            transformOrigin: "left center",
+            ease: "none"
+        })
+
+
+        ScrollTrigger.create({
+            animation: progress2,
+            trigger: "body",
+            start: "top top",
+            end: () => "+=" + document.body.offsetHeight,
+            scrub: .4
+        })
+
+        return () => {
+            progress2.restart();
+            // ScrollTrigger.kill();
+        };
+    }, []);
+
     return (
         <ParallaxProvider>
             <Line1 />
             <Container>
-
+                <PageProgress ref={bar} />
                 <h1>
                     Portfolio
                 </h1>

@@ -13,7 +13,7 @@ function Services() {
 
     useEffect(() => {
         const el = services.current
-        gsap.defaults({ ease: 'none', duration: .8 });
+        gsap.defaults({ ease: 'none', duration: .6 });
         gsap.registerPlugin(ScrollTrigger)
         const animation1 = gsap.timeline()
 
@@ -31,8 +31,8 @@ function Services() {
         })
 
         return () => {
-            animation1.kill();
-            ScrollTrigger.kill(true, true);
+            animation1.restart();
+            // ScrollTrigger.kill(true, true);
         };
     }, []);
 
